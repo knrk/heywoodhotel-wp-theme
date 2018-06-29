@@ -1,0 +1,12 @@
+/*
+Theme Name: Heywood
+Description: Heywood Hotel official theme.
+Version: 1.0
+Tags: responsive, clean, minimal, modern, documentation
+*/
+
+@import 'fonts';
+@import 'footer';
+@import 'navigation';
+@import 'mailchimp';
+@import 'heywood';
