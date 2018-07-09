@@ -6,7 +6,9 @@ Tags: responsive, clean, minimal, modern, documentation
 */
 
 @import 'fonts';
+@import 'normalize';
 @import 'footer';
 @import 'navigation';
 @import 'mailchimp';
 @import 'heywood';
+@import 'responsive';

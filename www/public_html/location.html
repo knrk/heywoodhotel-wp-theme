@@ -1,0 +1,473 @@
+﻿<!doctype html>
+<html class="no-js" lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>Heywood Hotel</title>
+		<meta name="description" content="Heywood Hotel">
+		<meta name="author" content="Heywood Hotel, Austin">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8bca4bb0-90b5-40cd-9646-32cd405f6aa4.css"/>
+		<link rel="stylesheet" href="./styles/heywood.css">
+
+		<script src="./scripts/vendor/modernizr.min.js"></script>
+		
+		<!-- Google Analytics -->
+		<script>
+			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+			ga('create', 'UA-27114347-1', 'auto');
+			ga('send', 'pageview');
+		</script>
+		<!-- End Google Analytics -->
+
+		<!-- Facebook Pixel Code -->
+		<script>
+			!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+			n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+			n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+			t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+			document,'script','//connect.facebook.net/en_US/fbevents.js');
+
+			fbq('init', '205064539829223');
+			fbq('track', "PageView");
+		</script>
+		<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=205064539829223&ev=PageView&noscript=1"/></noscript>
+		<!-- End Facebook Pixel Code -->
+	</head>
+  <body class="location">
+		<!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+    <!-- facebook embed -->
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>        
+		<!-- heywood contents -->
+    	<div class="container">
+			<!-- header -->
+			<header class="clearfix">
+				<h1 class="header-logo" title="Heywood Hotel, Austin, TX"></h1>
+				<label for="show-menu" class="show-menu">Menu <img class="menu-icon" src="./images/placeholder.png" alt="Touch here to open menu."></label>
+				<input type="checkbox" id="show-menu" role="button">
+				<ul id="menu">
+					<li><a href="/index.html">Home</a></li>
+					<li><a href="https://www.heywoodhotel.com/reservations.html">Reserve</a></li>
+					<li><a href="/room1.html">Rooms</a></li>
+					<li><a href="/location.html">Location</a></li>					
+					<li><a href="/group.html">Group Rentals</a></li>
+					<li><a href="/policies.html">Policies</a></li>
+				</ul>				
+			</header>
+			<div class="contents">
+
+				
+<!-- contents -->
+<script type="text/javascript" src="//maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCk1AQ9FJyIGvvw7OFfGCLY3sd2RP_AubY"></script>
+<script type="text/javascript">
+	var $map, heywood, heywoodid, request, callback, mapOptions, service, map, marker, infowindow, marker, marker2, icon,
+	aspectratio = 16/7;
+
+	function renderMap(){
+		$map.height(Math.round($map.width() / aspectratio));
+
+		map = new google.maps.Map($map.get(0), mapOptions);
+
+		service = new google.maps.places.PlacesService(map);
+
+	  service.getDetails(request, function(place, status) {
+	    if (status == google.maps.places.PlacesServiceStatus.OK) {
+	    	// console.log(place);
+	      var marker = new google.maps.Marker({
+	      	icon: {
+	      		url: "/images/heywood_marker.svg",
+	      		labelOrigin: new google.maps.Point(24,71),
+	      		size: new google.maps.Size(143, 47)
+	      	},
+	        map: map,
+	        position: place.geometry.location,
+	        placeId: heywoodid,
+	        clickable: false,
+	        cursor: 'false'
+	      });
+
+      	var marker2 = new google.maps.Marker({
+      		map: map,
+      		clickable: false,
+      		cursor: 'default',
+      		position: new google.maps.LatLng(30.249831, -97.749667),
+      		icon: {
+      			url: "/images/1by.png"
+      		},
+      		label: {
+      			text: 'SOUTH CONGRESS',
+      			color: "#444444",
+      			fontWeight: 'bold',
+      			fontSize: '14px'
+      		}, 
+
+      	});
+	    }
+	  });
+
+	}
+
+	function initialize() {
+		$map = $('#map_canvas');
+
+		mapcenter = new google.maps.LatLng(30.2606275, -97.7310708);
+		// mapcenter = new google.maps.LatLng(30.256277, -97.737555	);
+		heywood = new google.maps.LatLng(30.257986, -97.727945);
+		heywoodid = "ChIJIxgGtbO1RIYReE632UjNRpI";
+
+		mapOptions = {
+      center: mapcenter,
+      zoom: 14,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      mapTypeControl: false,
+      panControl: false,
+      scaleControl: false,
+      streetViewControl: false,
+      disableDefaultUI: true,
+      scrollwheel: false,
+      draggable: false,
+      styles: [
+						    {
+						        "featureType": "administrative",
+						        "elementType": "labels.text.fill",
+						        "stylers": [
+						            {
+						                "color": "#444444"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "landscape",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "color": "#f2f2f2"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "landscape",
+						        "elementType": "geometry",
+						        "stylers": [
+						            {
+						                "color": "#f8f8f8"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi.attraction",
+						        "elementType": "labels.text",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi.attraction",
+						        "elementType": "labels.icon",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi.business",
+						        "elementType": "labels.icon",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi.park",
+						        "elementType": "labels.text.fill",
+						        "stylers": [
+						            {
+						                "visibility": "on"
+						            },
+						            {
+						                "color": "#93cba3"
+						            },
+						            {
+						                "lightness": "-17"
+						            },
+						            {
+						                "weight": "0.57"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "poi.park",
+						        "elementType": "labels.icon",
+						        "stylers": [
+						            {
+						                "visibility": "on"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "saturation": -100
+						            },
+						            {
+						                "lightness": 45
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road",
+						        "elementType": "geometry",
+						        "stylers": [
+						            {
+						                "color": "#e3ded3"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road",
+						        "elementType": "labels",
+						        "stylers": [
+						            {
+						                "visibility": "simplified"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road",
+						        "elementType": "labels.text.fill",
+						        "stylers": [
+						            {
+						                "color": "#948c88"
+						            },
+						            {
+						                "lightness": "-2"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road",
+						        "elementType": "labels.icon",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road.highway",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "visibility": "simplified"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road.highway",
+						        "elementType": "labels",
+						        "stylers": [
+						            {
+						                "visibility": "simplified"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "road.arterial",
+						        "elementType": "labels.icon",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "transit",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "visibility": "off"
+						            }
+						        ]
+						    },
+						    {
+						        "featureType": "water",
+						        "elementType": "all",
+						        "stylers": [
+						            {
+						                "color": "#91bfbe"
+						            },
+						            {
+						                "visibility": "on"
+						            }
+						        ]
+						    }
+						]
+		};
+	
+		request = {
+			placeId: heywoodid
+		};
+
+		$(window).smartresize(function(){
+		  renderMap();
+		});
+
+		renderMap();
+	}
+
+	google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<div class="photos">
+	<div id="map_canvas"></div>
+</div>
+<div class="layoutgrid">
+	<div class="row copy">
+		<div class="eight columns">
+			<h1>No car needed to see the best of Austin.</h1>
+			<p>The Heywood Hotel is located just blocks from downtown, the Convention Center, Rainey Street, Lady Bird Lake, Sixth Street and more -- walkable or $5 by taxi or rideshare. We're right on the #17 busline, and we offer free bikes to tool around town. We're smack dab in the middle of the hip East Austin neighborhood where you’ll find some of the city’s best restaurants and cocktails, eclectic art, and best breakfast tacos in the universe. Free parking is provided for guests with cars. See <a href="features.html" class="white">Features.</a></p>			
+		</div>
+		<div class="four columns addressblock">
+			<h2>Location</h2>
+			<address>
+				1609 East Cesar Chavez Street<br>
+				Austin, Texas 78702<br>
+				2 stoplights east of I-35<br>
+				Between Comal &amp; Chalmers
+			</address>
+			<a href="tel:+15122715522" title="Phone Number">(512) 271-5522</a><br>
+			<span class="mailme">hey at heywoodhotel dot com</span>
+		</div>
+	</div>
+	<div class="row">
+		<div class="eight columns attractions">
+			<h2>Distance to popular Austin attractions:</h2>
+			<div class="splitcolumns">
+				<div class="halfcolumn">
+					<span><strong>Under 1 mile:</strong></span><br/>
+					<ul class="list-unstyled">
+						<li>
+						More than 30 top restaurants and bars including: 
+						<a href="http://www.launderetteaustin.com/" target="_blank">Launderette</a>,
+						<a href="http://www.bufalinapizza.com/" target="_blank">Bufalina</a>, 						
+						<a href="http://kemuri-tatsuya.com/" target="_blank">Kemuri Tatsu-ya</a>,
+						<a href="http://www.veracruzallnatural.com/" target="_blank">Veracruz All Natural</a>,
+						<a href="https://www.labarbecue.com/" target="_blank">La Barbecue</a>, 
+ 						<a href="http://via313.com/" target="_blank">Via 313 Pizzeria</a>, 
+						<a href="http://www.thewhitehorseaustin.com/" target="_blank">The White Horse</a>, 
+						<a href="http://www.weatherupnyc.com/austin-1/" target="_blank">Weather Up</a>,
+						<a href="https://www.scootinnaustin.com/" target="_blank">Scoot Inn</a></li>
+						
+						
+						<li><a href="http://www.austinconventioncenter.com/" target="_blank">Austin Convention Center</a></li>
+						<li>Lady Bird Lake / Town Lake</li>
+						<li><a href="https://www.austintexas.org/things-to-do/entertainment-districts/rainey-street/" target="_blank">Rainey Street District (bars and restaurants)</a></li>
+						<li>French Legation</li>
+						<li><a href="http://www.cemetery.state.tx.us/" target="_blank">Texas State Cemetery</a></li>
+						<li>Festival Beach Park</li>
+					</ul>		
+					<span><strong>1 mile:</strong></span><br/>
+					<ul class="list-unstyled">
+						<li><a href="https://franklinbarbecue.com/" target="_blank">Franklin Barbecue</a></li>
+						<li>Downtown Austin</li>
+						<li><a href="http://www.batcon.org/index.php/our-work/regions/usa-canada/protect-mega-populations/cab-intro" target="_blank">Congress Avenue Bat Bridge</a></li>
+						<li><a href="https://6street.com/" target="_blank"> Sixth Street Entertainment District</a> (bars and nightlife)</li>
+						<li><a href="https://www.austintexas.org/things-to-do/entertainment-districts/red-river/" target="_blank">Red River District</a> (live music)</li>
+						<li><a href="http://www.2ndstreetdistrict.com/" target="_blank">Second Street</a> (shopping)</li>
+					</ul>							
+				</div>
+				<div class="halfcolumn">
+					<span><strong>A littler farther:</strong></span><br/>
+					<ul class="list-unstyled">
+						<li><a href="http://www.utexas.edu/" target="_blank">University of Texas</a> (2 miles)</li>
+						<li><a href="http://www.tspb.texas.gov/prop/tc/tc/capitol.html" target="_blank">Texas State Capitol</a> (2 miles)</li>
+						<li>South Congress District (2 miles)</li>
+						<li><a href="http://www.blantonmuseum.org/" target="_blank">Blanton Art Museum</a> (2 miles)</li>
+						<li><a href="http://www.uterwincenter.com/" target="_blank">Frank Erwin Center</a> (2 miles)</li>
+						<li><a href="http://www.lbjlibrary.org/" target="_blank">LBJ Presidential Library</a> (2 miles)</li>
+						<li><a href="https://austintexas.gov/department/barton-springs-pool" target="_blank">Zilker Park and Barton Springs Pool</a> (2.5 miles)</li>
+						<li><a href="http://texasboxoffice.com/darrell-k-royal-texas-memorial-stadium" target="_blank">Royal Stadium</a> (2.5 miles)</li>
+						<li><a href="http://www.austintexas.gov/airport" target="_blank">Austin Bergstrom International Airport</a> (7 miles)</li>
+						<li><a href="http://circuitoftheamericas.com/" target="_blank">Circuit of the Americas</a> (12 miles)</li>
+					</ul>			
+				</div>
+			</div>
+		</div>	
+		<div class="four columns callout">
+			<h2 class="indent">More about our neighborhood:</h2>
+			<ul>
+				<li>
+					<h4>Texas Monthly</h4>
+					<a href="http://www.texasmonthly.com/travel/east-side-story/" target="_blank">"East Side Story"</a>
+				</li>
+				<li>
+					<h4>New York Times</h4>
+					<a href="http://www.nytimes.com/2014/02/02/travel/eclectic-east-austin.html?_r=0" target="_blank">"Eclectic East Austin"</a><br>
+					<a href="http://www.nytimes.com/2014/06/15/travel/hotel-review-heywood-hotel-in-austin-tex.html" target="_blank">"Hotel Review: Heywood Hotel"</a>
+				</li>
+<!-- 				<li>
+					<h4>New York Times</h4>
+					<a href="http://www.nytimes.com/2014/06/15/travel/hotel-review-heywood-hotel-in-austin-tex.html" target="_blank">Heywood Review</a>
+				</li> -->
+				<li>
+					<h4>Forbes</h4>
+					<a href="http://www.forbes.com/pictures/mhj45jmeh/skates-at-a-community-center-in-east-austin/" target="_blank">"America's Best Hipster Neighborhoods"</a>
+				</li>
+				<li>
+					<h4>San Francisco Magazine</h4>
+					<a href="http://www.modernluxury.com/san-francisco/story/travel-texas-without-ever-mentally-leaving-san-francisco" target="_blank">"East Austin Is a Little Slice of Home"</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>	
+
+			</div>
+			<footer>
+				<section>
+					<address><span>1609 e. cesar chavez st.</span><span> austin, tx 78702</span></address>
+				</section>
+				<section>
+					<span class="mailme" title="Email Address">hey at heywoodhotel dot com</span>
+					<span>&nbsp;·&nbsp;</span>
+					<a href="tel:+15122715522" title="Phone Number">(512) 271-5522</a>
+				</section>
+				<section>
+					<span>We like you too!</span>
+					<a id="facebooklink" href="http://www.facebook.com/heywoodhotel" target="_new" title="Find us on Facebook!"><img alt="Find us on Facebook!" src="images/ratios/oneone.png"></a>
+					<a id="twitterlink" href="https://twitter.com/heywoodhotel" target="_new" title="Follow us on Twitter!"><img alt="Follow us on Twitter!" src="images/ratios/oneone.png"></a>
+					<a id="instagramlink" href="https://instagram.com/heywoodhotel/" target="_new" title="Follow us on Instagram!"><img alt="Follow us on Instagram!" src="images/ratios/oneone.png"></a>
+				</section>
+			</footer>
+			<div class="copyright">&copy; Heywood Hotel 2016 All rights reserved.</div>		</div>
+
+		<script src="/scripts/heywood.js"></script>  </body>
+</html>

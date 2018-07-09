@@ -1,0 +1,898 @@
+@import "./src/styles/normalize.less";
+@import "./src/styles/jquery.bxslider.less";
+@import "./src/styles/swipebox.less";
+@import "./src/styles/skeleton.less";
+
+
+// VARIABLES
+@text-color: 			#464646;
+@text-color-invert:		#FFFFFF;
+@text-color-sidenav: 	#C9CBC0;
+@link-color: 			#66cccc;
+@dark-link-color: #339999;
+@bg-color: 				#FFFFFF;
+@dark-border-color: #4C4748;
+@dark-bg-color: 		#666666;	
+@med-bg-color: 			#adb0a0;
+@border-color:			@dark-bg-color;
+@selected-border-color:	#fadf17;
+@selected-room-color:	#efe17b;
+@default-font-family: 	'Trade Gothic W01 Roman', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
+@alt-font-family: 		'ClassicRoundW00-Regular', @default-font-family;
+
+.clearfix() {
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.clearfix {
+	.clearfix();
+}
+
+// Classes
+.pull-left {
+  float: left !important;
+}
+.pull-right {
+  float: right !important;
+}
+
+.serif() {
+	font-family: @alt-font-family;
+}
+
+.serif {
+	.serif();
+}
+
+html {
+	font-family: @default-font-family;
+	font-size: 13px;
+	line-height: 18px;
+	color: @text-color;
+	background-color: @bg-color;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+	line-height: 18px;
+	height: 100%;
+	font-weight: normal;
+}
+
+a, a:hover, a:visited, a:active, a:link {
+	color: @dark-link-color;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+address {
+	font-style: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+h1 {
+	font-family: @alt-font-family;
+	font-size: 28px;
+	line-height: 28px
+}
+
+h2 {
+	font-family: @alt-font-family;
+	font-size: 24px;
+	font-weight: normal;
+	line-height: 24px;
+}
+
+h3 {
+	font-family: @alt-font-family;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: normal;
+}
+
+h4 {
+	font-family: @default-font-family;
+	font-size: 14px;
+	line-height: 18px;
+}
+
+blockquote {
+	padding-top: 5px;
+	margin: 0;
+	font-family: @default-font-family;
+	display: block;
+
+	p {
+		margin: 0;
+	}
+
+	cite {
+		margin: 0;
+		text-align: right;	
+		padding: 0;
+		display: block;
+		font-size: 11px;
+	}
+}	
+
+em {
+	text-decoration: underline;
+	font-style: normal;
+}
+
+ul.list-unstyled {
+	list-style: none;
+}
+
+section {
+	margin-bottom: 30px;
+}
+
+section:last-child {
+	margin-bottom: 0;
+}
+
+.container {
+	width: 100%;
+	min-width: 100px;
+	max-width: 1020px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 0;
+}
+
+header {	
+	width: 100%;
+	min-width: 100px;
+	max-width: 960px;
+	margin-left: 0;
+	margin-right: 0;
+	position: relative;	
+	border-bottom: none;
+
+	.header-logo {
+		width: 100px;
+		height: 54px;
+		display: inline-block;
+		background: url('/images/320/logo.svg') center center no-repeat;
+		float: left;
+		margin: 1px 0 0 5px;
+	}
+
+	/*Make dropdown links appear inline*/
+	ul {
+		list-style-type:none;
+		position: static;
+		display: none;
+		right: auto;
+		margin-top: 1px;
+		margin:0;
+		padding:0;
+		right: 0;
+	}
+
+	/*Create vertical spacing*/
+	li {
+		margin-bottom: 1px;
+		margin-right: 0;
+	}
+
+	/*Make all menu links full width*/
+	ul li a {
+		width: 100%;
+	}
+
+	li{ 
+		a {
+			border-width: 0 1px 1px 1px;
+			border-color: @bg-color;
+			display:block;
+			height: 40px;
+			color: @text-color-invert;
+			text-decoration: none;
+			text-transform: uppercase;
+			text-align: center;
+			line-height: 40px;
+			background: @dark-bg-color;
+		}
+
+		a, a:hover, a:visited, a:active, a:link {
+			color: @text-color-invert;
+			text-decoration: none;
+		}
+
+		a:hover {
+			background: @selected-border-color;
+			color: @text-color;
+		}
+	}		
+
+	/*Style 'show menu' label button and hide it by default*/
+	.show-menu {
+		text-decoration: none;
+		border-bottom: 3px solid @border-color;
+		text-align: right;
+		line-height: 54px;
+		height: 54px;
+		display: none;
+		text-transform: uppercase;
+		padding-right: 5px;
+		display: block;
+
+		.menu-icon {
+			background: url('/images/320/menu-icon.png') center center no-repeat;
+			width: 30px; 
+			height: 30px;
+			vertical-align: middle;
+			position: relative;
+			top: -3px;
+		}
+	}
+
+	/*Hide checkbox*/
+	input[type=checkbox]{
+	    display: none;
+	}
+
+	/*Show menu when invisible checkbox is checked*/
+	input[type=checkbox]:checked ~ #menu{
+	    display: block;
+	}			
+}
+
+.contents {
+	border: none;
+	top: 0px;
+	padding-bottom: 10px;
+	padding-top: 1px;
+}
+
+.photos {
+	margin-left: 0;
+	margin-right: 0;
+	margin-bottom: 15px;
+}
+
+.bxslider {
+	padding: 0;
+	margin: 0;
+	margin-top: 1px;
+}
+
+.bx-wrapper .bx-viewport {
+	border:none;
+	box-shadow: none;
+	left: 0;
+}
+
+.bx-wrapper {
+	margin-bottom: 40px;
+}
+
+.bannerimage {
+	width: 100%;
+}
+
+.row {
+	margin-bottom: 20px;
+	.clearfix();
+}
+
+.contentblock {
+	padding: 0 10px 10px 10px;
+}
+
+.callout {
+	background-color: @dark-bg-color;
+	padding: 10px;
+	color: @text-color-invert;
+
+	caption {
+		margin: 0;
+		font-family: @alt-font-family;
+		text-align: left;
+		font-size: 20px;
+	}
+
+	a {
+		color: @link-color !important;
+	}
+
+	h2.punchline {
+		color: @link-color;
+	}
+}	
+
+.sidenav {
+	background-color: @dark-bg-color;
+	// display: none;
+
+	ul.list-unstyled {
+		display:none;
+		margin: 0;
+		padding: 0;
+		padding-left: 0;
+
+		li {
+			position: relative;
+
+			a {
+				display: block;
+				margin: 5px;
+				background-color: @med-bg-color;
+				padding: 15px 5px 15px 10px;	
+				color: @text-color;
+				font-size: 16px;
+				clear: both;	
+			}
+
+			a, a:hover, a:visited, a:active, a:link {
+				text-decoration: none;
+			}
+
+			a:hover {		
+				background-color: @selected-room-color;
+
+				.room-name {
+					color: @text-color;
+				}
+			}
+
+			.room-number {
+				font-size: 24px;
+				display: block;
+				position: relative;
+				float: left;
+				border: 1px solid @text-color;
+				border-radius: 50%;
+				padding: 6px 8px;
+				margin-top: -8px;
+			}
+
+			.room-name {
+				display: block;
+				margin-left: 40px;
+			}
+		}
+	}
+}
+
+.navdropdown {
+	display: block;
+	width: 100%;
+	height: 40px;	
+	font-weight: 600;
+	border-weight: 3px;
+}
+
+body.index {
+	#menu {
+		a[href*="index"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+
+	#nyt {
+		padding-top: 31px;
+		padding-bottom: 31px;
+	}
+
+	.nytlogo {
+		width: 60px;
+		display: inline-block;
+		float: left;
+	}
+
+	.nytcallout {
+		display: block;
+		position: relative;
+		margin-left: 80px;
+
+		&.footer {
+			font-size: 16px;
+			font-family: @alt-font-family;
+		}
+	}
+
+	#googlemap {
+		width: 100%;
+		min-height: 150px;
+		background-image: url('/images/googlemap_big.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		display: block;
+
+		a:hover {
+			text-decoration: none;
+		}
+
+		h3 {
+			font-family: @alt-font-family;
+			font-size: 28px;
+			font-weight: bold;
+			margin:0;
+			position: relative;
+			top: 25px;
+			left: 25px;
+			color: @text-color;
+			text-shadow: 1px 1px 2px rgba(150, 150, 150, 1);
+		}
+	}
+
+	#exhibiting {
+		margin-top: 10px;
+		img {
+			width: 100%;
+		}
+	}
+}
+
+body.reservations {
+	#menu {
+		a[href*="reservations"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+
+	iframe {
+		width: 100%;
+		height: 800px;
+	}
+}
+
+body.rooms {
+	label {
+		font-weight: 600;
+	}
+
+	#menu {
+		a[href*="room"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+
+	.bxslider {
+		picture {
+			img {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	&.room1 {
+		.sidenav {
+			a[href*="room1"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}
+
+	&.room2 {
+		.sidenav {
+			a[href*="room2"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}
+
+	&.room3 {
+		.sidenav {
+			a[href*="room3"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}	
+
+	&.room4 {
+		.sidenav {
+			a[href*="room4"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}	
+
+	&.room5 {
+		.sidenav {
+			a[href*="room5"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}	
+
+	&.room6 {
+		.sidenav {
+			a[href*="room6"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}	
+
+	&.room7 {
+		.sidenav {
+			a[href*="room7"] {
+				background-color: @selected-room-color;
+			}
+		}
+	}	
+}
+
+body.location {
+	#menu {
+		a[href*="location"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+
+	#map_canvas { 
+	}
+
+	.mapimage {
+		background-image: url('/images/widescreen/googlemap.jpg');
+		background-position: center center;
+		background-repeat: no-repeat;
+		width: 100%;
+		position: relative;
+		vertical-align: top;
+		background-size: contain;
+	}
+
+	.attractions {
+		li {
+			margin-bottom: 7px;
+		}
+	}
+}
+
+body.features, body.policies {
+	.contentblock {
+
+		h2 {
+			color: @text-color-invert;
+			background-color: @dark-bg-color;
+			padding: 6px 10px;
+			margin-left: -10px;
+			margin-right: -10px;
+			margin-bottom: 10px;
+		}
+
+		li {
+			margin-bottom: 15px;
+		}
+
+		.badges {
+			ul {
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+
+			li {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				margin-bottom: 10px;
+			}
+
+			a {
+				img {
+					max-width: 150px;
+				}
+			}
+		}
+	}
+}
+
+body.features {
+	#menu {
+		a[href*="features"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+}
+
+body.policies {
+	#menu {
+		a[href*="policies"] {
+			background-color: @selected-border-color;
+			color: @text-color;
+		}
+	}
+}
+
+footer {
+	margin-top: 0;
+	line-height: 30px;
+	display: block;
+	clear: both;
+	height: auto;
+	text-align: center;
+	font-size: 11px;
+	background-color: @dark-border-color;
+	color: @text-color-invert;	
+
+	section, section:first-child, section:last-child, section:nth-child(even) {
+		display: block;
+		text-align: center;
+		width: auto;
+		margin-left: 0;
+		margin-right: 0;
+		margin-bottom: 0;
+	}
+
+	a, a:hover, a:visited, a:active, a:link {
+		color: @text-color-invert;
+	}	
+
+	#facebooklink, #twitterlink, #instagramlink {
+		img {
+			width: 23px;
+			height: 23px;
+			vertical-align: middle;
+			margin-left: 5px;
+			background-image: url('/images/social-sprites.png');
+			background-repeat: no-repeat;
+			position: relative;
+			top: -3px;
+		}
+	} 
+
+	#facebooklink {
+		img {
+			background-position: 0px 0px;
+		}
+	}
+
+	#twitterlink {
+		img {
+			background-position: 0px -24px;
+		}
+	}
+
+	#instagramlink {
+		img {
+			background-position: 0px -48px;
+		}
+	}	
+
+}	
+
+
+
+/* Mobile first queries */
+/* Larger than mobile */
+@media (min-width: 400px) {}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+	body.index {
+		#exhibiting {
+			margin-top: 0;
+		}
+	}
+
+	body.rooms {
+		.dropdownnav {
+			display: none;
+		}
+
+		.sidenav {
+			ul.list-unstyled {
+				display: block;
+			}
+		}
+
+		.thumbnail {
+			vertical-align: middle;
+			display: inline;
+			max-width: 45%;
+		}
+
+		.swipebox {
+			display: inline;
+		}
+	}
+
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+	.container {
+		padding-top: 15px;
+	}
+
+	header {
+
+		.header-logo {
+			width: 209px;
+			height: 111px;
+			display: inline-block;
+			background: url('/images/heywood-logo.svg') center center no-repeat;
+			margin: 0;
+			position: relative;
+			z-index: 1000;
+		}
+
+		/*Strip the ul of padding and list styling*/
+		ul {
+			position: absolute;
+			margin-top: 59px;
+			z-index: 1000;
+			display: block;
+		}
+
+		/*Style for menu links*/
+		li {
+			display: inline-block;
+			float: left;
+			width: auto;
+
+			margin-right: 20px;
+			a {
+				border: 0;
+				display: inline-block;
+				line-height: 25px;
+				height: auto;
+				color: @text-color;
+				text-align: inherit;
+				background-color: transparent;
+				
+			}
+
+			a, a:hover, a:visited, a:active, a:link {
+				color: @text-color;
+				text-decoration: none;
+			}
+		}
+
+		/*Hover state for top level links*/
+		li:hover a {
+			background: none;
+			border-bottom: 3px solid @selected-border-color;
+			color: @text-color;
+		}
+
+		/*Display 'show menu' link*/
+		.show-menu {
+			display: none;
+		}
+	}
+
+	#menu {
+		a {
+			border-bottom: 0;
+		}
+	}
+
+	body.index {
+		#menu {
+			a[href*="index"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}
+	}	
+
+	body.reservations {
+		#menu {
+			a[href*="reservations"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}
+	}
+
+	body.rooms {
+		#menu {
+			a[href*="room"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}
+
+		.sidenav {
+			display: block;
+		}
+	}
+
+	body.location {	
+		#menu {
+			a[href*="location"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}	
+
+		.splitcolumns {
+			padding-top: 10px;
+
+			.halfcolumn {
+				width: 49%;
+				display: inline-block;
+				position: relative;
+				vertical-align: top;
+			}
+		}
+	}
+
+	body.features {
+		#menu {
+			a[href*="features"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}
+	}
+
+	body.policies {
+		#menu {
+			a[href*="policies"] {
+				background-color: transparent;
+				border-bottom: 3px solid @selected-border-color;
+			}
+		}
+	}	
+
+	.contents {
+		border-top: 3px solid @dark-border-color;
+		border-right: 3px solid @dark-border-color;
+		border-bottom: 3px solid @dark-border-color;
+		border-left: 3px solid @dark-border-color;
+		position: relative;
+		top: -27px;
+		padding: 25px 5px 20px 5px;
+		background-color: @bg-color;
+		overflow-x: hidden;
+		overflow-y: visible;
+	}
+
+	footer {
+		margin-top: -27px;
+		height: 30px;
+		position: relative;
+		display: table;
+		width: 100%;
+
+		section {
+			display: table-cell !important;
+			padding-left: 5px;
+			padding-right: 5px;
+			width: 33.33%;
+		}
+
+		section:first-child {
+			padding-left: 15px;
+		}
+
+		section:nth-child(even) {
+			text-align: center;
+		}
+
+		section:last-child {
+			text-align: right;
+			padding-right: 15px;
+		}
+	}
+
+}

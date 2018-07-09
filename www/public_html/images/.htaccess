@@ -1,0 +1,39 @@
+
+RewriteEngine on
+# -FrontPage-
+
+IndexIgnore .htaccess */.??* *~ *# */HEADER* */README* */_vti*
+
+<Limit GET POST>
+order deny,allow
+deny from all
+allow from all
+</Limit>
+<Limit PUT DELETE>
+order deny,allow
+deny from all
+</Limit>
+AuthName heywoodhotelaustin.com
+AuthUserFile /home/p691r380/public_html/_vti_pvt/service.pwd
+AuthGroupFile /home/p691r380/public_html/_vti_pvt/service.grp
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} ^www\.heywoodaustin\.com$ [NC]
+RewriteRule ^index\.html$ http://www.heywoodhotel.com/room1.html [R=301]
+RewriteCond %{HTTP_HOST} ^www\.heywoodaustin\.com$ [NC]
+RewriteRule ^room1\.html$ http://www.heywoodhotel.com/room1.html [R=301]
+
+RewriteCond %{HTTP_HOST} ^haywoodhotel\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.haywoodhotel\.com$
+RewriteRule ^/?$ "http\:\/\/www\.heywoodhotel\.com" [R=301,L]
+
+
+RewriteCond %{HTTP_HOST} ^eastsideinnaustin\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.eastsideinnaustin\.com$
+RewriteRule ^/?$ "http\:\/\/www\.heywoodhotel\.com" [R=301,L]
+
+RewriteCond %{HTTP_HOST} ^sleepwelldogood\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.sleepwelldogood\.com$
+RewriteRule ^/?$ "http\:\/\/www\.heywoodhotel\.com" [R=301,L]
+
+

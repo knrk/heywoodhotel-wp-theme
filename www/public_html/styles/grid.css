@@ -1,0 +1,118 @@
+/* =Containers
+--------------------------------------------------------------------------------*/
+.container_988 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 988px;
+}
+.container_grid {
+  width: 960px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.container_grid640 {
+  width: 640px;
+}
+/* =Grid >> Global
+--------------------------------------------------------------------------------*/
+.grid_960,
+.grid_640,
+.grid_310,
+.grid_171,
+.grid_168,
+.grid_460,
+.grid_379,
+.grid_385,
+.grid_304,
+.grid_567 {
+  display: inline;
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+/* =Grid >> Children (Alpha ~ First, Omega ~ Last)
+--------------------------------------------------------------------------------*/
+.alpha {
+  margin-left: 0;
+}
+.omega {
+  margin-right: 0;
+}
+/* =Grid >> 12 Columns
+--------------------------------------------------------------------------------*/
+.container_grid .grid_960 {
+  width: 960px;
+}
+.container_grid .grid_640 {
+  width: 640px;
+}
+.container_grid .grid_310,
+.container_grid640 .grid_310 {
+  width: 310px;
+}
+.container_grid .grid_460,
+.container_grid640 .grid_460 {
+  width: 458px;
+}
+.container_grid .grid_168,
+.container_grid640 .grid_168 {
+  width: 168px;
+}
+.container_grid .grid_171,
+.container_grid640 .grid_171 {
+  width: 171px;
+}
+.container_grid .grid_379,
+.container_grid640 .grid_379 {
+  width: 379px;
+}
+.container_grid .grid_385,
+.container_grid640 .grid_385 {
+  width: 385px;
+}
+.container_grid .grid_304,
+.container_grid640 .grid_304 {
+  width: 304px;
+}
+.container_grid .grid_567,
+.container_grid640 .grid_567 {
+  width: 567px;
+}
+/* =Clear Floated Elements
+--------------------------------------------------------------------------------*/
+/* http://sonspring.com/journal/clearing-floats */
+html body * span.clear,
+html body * div.clear,
+html body * li.clear,
+html body * dd.clear {
+  background: none;
+  border: 0;
+  clear: both;
+  display: block;
+  float: none;
+  font-size: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+/* http://www.positioniseverything.net/easyclearing.html */
+.clearfix:after {
+  clear: both;
+  content: '.';
+  display: block;
+  visibility: hidden;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}

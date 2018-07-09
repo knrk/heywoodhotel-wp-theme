@@ -7,15 +7,29 @@ header ul {
     margin: 0;
     padding: 0;
     right: 0;
-  }
-  header li {
+}
+header li {
     margin-bottom: 1px;
     margin-right: 0;
-  }
-  header ul li a {
+}
+body.press #menu a[href*="press"],
+body.policies #menu a[href*="policies"],
+body.group #menu a[href*="group"],
+body.group-rentals #menu a[href*="group-rentals"],
+body.index #menu a[href*="index"],
+body.home #menu .current-menu-item a,
+body.reservations #menu a[href*="reservations"],
+body.location #menu a[href*="location"],
+body.policies #menu a[href*="policies"],
+body.rooms #menu a[href*="room"] {
+    background-color: #fadf17;
+    color: #464646;
+}
+
+header ul li a {
     width: 100%;
-  }
-  header li a {
+}
+header li a {
     border-width: 0 1px 1px 1px;
     border-color: #ffffff;
     display: block;
@@ -26,106 +40,16 @@ header ul {
     text-align: center;
     line-height: 40px;
     background: #666666;
-  }
-  header li a,
-  header li a:hover,
-  header li a:visited,
-  header li a:active,
-  header li a:link {
+}
+header li a,
+header li a:hover,
+header li a:visited,
+header li a:active,
+header li a:link {
     color: #ffffff;
     text-decoration: none;
-  }
-  header li a:hover {
+}
+header li a:hover {
     background: #fadf17;
     color: #464646;
-  }
-
-  /* Larger than tablet */
-@media (min-width: 750px) {
-    header ul {
-        position: absolute;
-        margin-top: 59px;
-        z-index: 1000;
-        display: block;
-    }
-    header li {
-        /* display: inline-block; */
-        float: left;
-        width: auto;
-        margin-right: 20px;
-    }
-    header li a {
-        border: 0;
-        display: inline-block;
-        line-height: 25px;
-        height: auto;
-        color: #464646;
-        text-align: inherit;
-        background-color: transparent;
-    }
-    header li a,
-    header li a:hover,
-    header li a:visited,
-    header li a:active,
-    header li a:link {
-        color: #464646;
-        text-decoration: none;
-    }
-    header li:hover a {
-        background: none;
-        border-bottom: 3px solid #fadf17;
-        color: #464646;
-    }
-
-    body #menu .current-menu-item a {
-        border-bottom: 3px solid #fadf17;
-        color: #464646;
-    }
-
-    body.press #menu a[href*="press"] {
-        background-color: #fadf17;
-        color: #464646;
-    }
-    
-    body.policies #menu a[href*="policies"] {
-        background-color: #fadf17;
-        color: #464646;
-    }
-    
-    body.group #menu a[href*="group"] {
-        background-color: #fadf17;
-        color: #464646;
-    }
-    body.index #menu a[href*="index"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }
-    body.reservations #menu a[href*="reservations"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }
-    body.rooms #menu a[href*="room"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }
-    body.location #menu a[href*="location"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }
-    body.policies #menu a[href*="policies"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }
-    body.group #menu a[href*="group"] {
-        background-color: transparent;
-        border-bottom: 3px solid #fadf17;
-    }	
-    body.location #menu a[href*="location"] {
-        background-color: transparent;
-        color: #464646;
-    }
-    body.rooms #menu a[href*="room"] {
-        background-color: transparent;
-        color: #464646;
-    }
 }

@@ -13,9 +13,12 @@
 <div class="container">
 	<header class="clearfix">
 		<div class="header-logo" title="Heywood Hotel, Austin, TX"></div>
+		<label for="show-menu" class="show-menu">Menu <img class="menu-icon" src="<?php echo get_template_directory_uri(); ?>/img/placeholder.png" /></label>
+		<input type="checkbox" id="show-menu" role="button">
 		<?php
 		wp_nav_menu(array(
 			'menu_id' => 'menu',
+			'container' => false,
 			'theme_location' => 'navigation-menu')); 
 		?>
 	</header>

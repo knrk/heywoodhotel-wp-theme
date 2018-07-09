@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sitemap-generator-url="http://www.auditmypc.com/free-sitemap-generator.asp" -->
+<!-- This sitemap was created using the free tool found here: http://www.auditmypc.com/free-sitemap-generator.asp -->
+<!-- Audit My PC also offers free security tools to help keep you safe during internet travels -->
+<urlset 
+		xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 
+		http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+<url>
+    <loc>http://www.heywoodaustin.com</loc>
+    <lastmod>2011-09-08T23:46:33-05:00</lastmod>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/index.html</loc>
+    <lastmod>2011-09-08T23:46:33-05:00</lastmod>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room1.html</loc>
+    <lastmod>2011-09-08T23:46:34-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/reservations.html</loc>
+    <lastmod>2011-09-08T23:46:34-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/location.html</loc>
+    <lastmod>2011-09-08T23:46:33-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/features.html</loc>
+    <lastmod>2011-09-08T23:46:33-05:00</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/info.html</loc>
+    <lastmod>2011-09-08T23:46:33-05:00</lastmod>
+    <priority>0.6</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room2.html</loc>
+    <lastmod>2011-09-08T23:46:34-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room3.html</loc>
+    <lastmod>2011-09-08T23:46:34-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room4.html</loc>
+    <lastmod>2011-09-08T23:46:34-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room5.html</loc>
+    <lastmod>2011-09-08T23:46:35-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room6.html</loc>
+    <lastmod>2011-09-08T23:46:35-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+<url>
+    <loc>http://www.heywoodaustin.com/room7.html</loc>
+    <lastmod>2011-09-08T23:46:35-05:00</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+</url>
+</urlset>
