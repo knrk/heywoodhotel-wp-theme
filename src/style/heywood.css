@@ -134,17 +134,10 @@
   header {
     width: 100%;
     min-width: 100px;
-    max-width: 960px;
     margin-left: 0;
     margin-right: 0;
     position: relative;
     border-bottom: none;
-    /*Make dropdown links appear inline*/
-    /*Create vertical spacing*/
-    /*Make all menu links full width*/
-    /*Style 'show menu' label button and hide it by default*/
-    /*Hide checkbox*/
-    /*Show menu when invisible checkbox is checked*/
   }
   header .header-logo {
     width: 100px;
@@ -227,7 +220,7 @@
     clear: both;
   }
   .contentblock {
-    padding: 0 10px 10px 10px;
+    /* padding: 0 10px 10px 10px; */
   }
   .callout {
     background-color: #666666;
@@ -474,7 +467,8 @@
   }
   body.press .contentblock h2,
   body.policies .contentblock h2,
-  body.group-rentals .contentblock h2 {
+  body.group-rentals .contentblock h2,
+  body.specials .contentblock h2 {
     color: #ffffff;
     background-color: #666666;
     padding: 6px 10px;
@@ -485,6 +479,11 @@
   
   body.group-rentals .contentblock .badge img {
     margin: 25px 0 20px 30px;
+  }
+
+  .contentblock .badge > img {
+    max-width: 40%;
+    margin-left: 10px;
   }
   
   

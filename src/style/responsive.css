@@ -172,7 +172,7 @@
   }
 
   /* Larger than tablet */
-@media (min-width: 800px) {
+@media (min-width: 845px) {
     header ul {
         position: absolute;
         margin-top: 59px;
@@ -225,7 +225,7 @@
 }
 
   /* Larger than tablet */
-  @media (min-width: 800px) {
+  @media (min-width: 845px) {
     .container {
       padding-top: 15px;
     }

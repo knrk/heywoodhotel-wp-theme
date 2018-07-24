@@ -1,5 +1,6 @@
 /node_modules
 /build
 /tools
+/www
 heywood.sql
 *.log
