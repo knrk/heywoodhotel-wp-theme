@@ -14,5 +14,5 @@ if ( $comments ) {
 		echo '<p>' . $comment->comment_content . '</p>';
 	}
 } else {
-	echo 'No comments found.';
+	echo '<div class="post-comments">No comments found.</div>';
 }

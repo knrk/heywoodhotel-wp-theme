@@ -140,10 +140,10 @@ gulp.task('build-dev', [
 ], () => {
 	connect.server({
 		base: 'build/wordpress',
-		port: '3020'
+		port: '5050'
 	}, () => {
 		browserSync({
-			proxy: '127.0.0.1:3020'
+			proxy: '127.0.0.1:5050'
 		});
 	});
 });

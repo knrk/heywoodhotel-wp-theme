@@ -10,4 +10,5 @@ Tags: responsive, clean, minimal, modern, documentation
 @import 'navigation';
 @import 'mailchimp';
 @import 'heywood';
+@import "blog";
 @import 'responsive';

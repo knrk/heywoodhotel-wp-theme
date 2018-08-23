@@ -121,25 +121,7 @@
     .offset-by-one-half.columns {
       margin-left: 52%;
     }
-  }
 
-  /* Mobile first queries */
-  /* Larger than mobile */
-  @media (max-width: 549px) {
-    .pressbox .press-image.new-york-times {
-      max-width: 250px;
-      min-width: 75px;
-    }
-  }
-  @media (min-width: 550px) and (max-width: 800px) {
-    body.index #heycation .columns {
-      display: block !important;
-      width: 100% !important;
-      margin: 0 !important;
-    }
-  }
-  /* Larger than phablet */
-  @media (min-width: 550px) {
     body.index #exhibiting {
       margin-top: 0;
     }
@@ -171,8 +153,37 @@
     }
   }
 
-  /* Larger than tablet */
+
+/* Larger than mobile */
+@media (max-width: 549px) {
+  .single-post h1 {
+    padding: 10px 25px 5px 25px;
+  }
+  .single-post .post-info {
+    padding: 5px 25px;
+  }
+  .single-post .post-inner-content,
+  .single-post .post-comments {
+    padding: 10px 50px;
+  }
+  .pressbox .press-image.new-york-times {
+    max-width: 250px;
+    min-width: 75px;
+  }
+}
+@media (min-width: 550px) and (max-width: 800px) {
+  body.index #heycation .columns {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
+
+/* Larger than tablet */
 @media (min-width: 845px) {
+  .container {
+      padding-top: 15px;
+    }
     header ul {
         position: absolute;
         margin-top: 59px;
@@ -217,24 +228,19 @@
     body.reservations #menu a[href*="reservations"],
     body.location #menu a[href*="location"],
     body.policies #menu a[href*="policies"],
-    body.rooms #menu a[href*="room"] {
+    body.rooms #menu a[href*="room"],
+    body.blog #menu a[href*="blog"],
+    body.single-post #menu a[href*="blog"]  {
         border-bottom: 3px solid #fadf17;
         background-color: transparent;
         color: #464646;
     }
-}
 
-  /* Larger than tablet */
-  @media (min-width: 845px) {
-    .container {
-      padding-top: 15px;
-    }
-    
     header .header-logo {
       width: 209px;
       height: 111px;
       display: inline-block;
-      background: url('/images/heywood-logo.svg') center center no-repeat;
+      background: url('/wp-content/themes/heywood/img/heywood-logo.svg') center center no-repeat;
       margin: 0;
       position: relative;
       z-index: 1000;
@@ -283,25 +289,12 @@
       max-width: 250px;
       min-width: 75px;
     }
-    body.index #menu a[href*="index"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
-    body.reservations #menu a[href*="reservations"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
-    body.rooms #menu a[href*="room"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
+    
+
     body.rooms .sidenav {
       display: block;
     }
-    body.location #menu a[href*="location"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
+    
     body.location .splitcolumns {
       padding-top: 10px;
     }
@@ -311,22 +304,7 @@
       position: relative;
       vertical-align: top;
     }
-    body.press #menu a[href*="press"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
-    body.policies #menu a[href*="policies"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }
-    body.group #menu a[href*="group"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }	
-     body.specials #menu a[href*="specials"] {
-      background-color: transparent;
-      border-bottom: 3px solid #fadf17;
-    }  
+     
     .contents {
       border-top: 3px solid #4c4748;
       border-right: 3px solid #4c4748;
@@ -365,12 +343,13 @@
       text-align: right;
       padding-right: 15px;
     }
-  }
+    
+}
 
-  @media (min-width: 900px) {
-    .pressbox .press-image {
-      display: inline-block;
-      margin-left: 10px;
-      margin-right: 10px;
-    }
+@media (min-width: 900px) {
+  .pressbox .press-image {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
   }
+}

@@ -1,3 +1,19 @@
+const resizeGridItem = (item) => {
+	const grid = document.querySelector('.contents > main');
+	const rowHeight = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+	const rowGap = parseInt(window.getComputedStyle(grid).getPropertyValue('grid-row-gap'));
+	const itemHeight = item.querySelector('.content').getBoundingClientRect().height;
+	const rowSpan = Math.ceil((itemHeight + rowGap) / (rowHeight + rowGap));
+	item.style.gridRowEnd = `span ${rowSpan}`;
+}
+
+const resizeAllGridItems = () => {
+	let allItems = document.querySelectorAll('.post-block');
+	for (let x = 0, len = allItems.length; x < len; x++) {
+		resizeGridItem(allItems[x]);
+	}
+}
+
 $(document).ready(function() {
 
 	// enable any .mailme tags
@@ -13,5 +29,8 @@ $(document).ready(function() {
 		var url = $(this).find('option:selected').val();
 		window.location.href = url;
 	});
+
+	window.onload = resizeAllGridItems();
+	window.addEventListener('resize', () => resizeAllGridItems());
 
 });

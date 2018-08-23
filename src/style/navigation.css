@@ -13,7 +13,6 @@ header li {
     margin-right: 0;
 }
 body.press #menu a[href*="press"],
-body.policies #menu a[href*="policies"],
 body.group #menu a[href*="group"],
 body.group-rentals #menu a[href*="group-rentals"],
 body.index #menu a[href*="index"],

@@ -8,9 +8,9 @@ add_action( 'wp_enqueue_scripts', 'heywood_resources' );
 
 // Customize excerpt word count length
 function custom_excerpt_length() {
-	return 22;
+	return 40;
 }
-add_filter( 'excerpt_length', 'custom_excerpt_length' );
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Theme setup
 function heywood_setup() {
@@ -75,3 +75,51 @@ function body_class_section($classes) {
 	}
 	return $classes;
 }
+
+add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
+
+function my_show_extra_profile_fields( $user ) { ?>
+
+	<h3>Heywood Hotel role</h3>
+
+	<table class="form-table">
+
+		<tr>
+			<th><label for="hotel-role">Role in Hotel</label></th>
+
+			<td>
+				<input type="text" name="hotel-role" id="hotel-role" value="<?php echo esc_attr( get_the_author_meta( 'hotel_role', $user->ID ) ); ?>" class="regular-text" /><br />
+				<span class="description">Please enter your role in hotel.</span>
+			</td>
+		</tr>
+
+	</table>
+<?php }
+
+add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
+
+function my_save_extra_profile_fields( $user_id ) {
+
+	if ( !current_user_can( 'edit_user', $user_id ) ) {
+		return false;
+	}
+
+	/* Copy and paste this line for additional fields. Make sure to change 'twitter' to the field ID. */
+	update_usermeta( $user_id, 'hotel_role', $_POST['hotel-role'] );
+}
+
+/**
+ * Filter the "read more" excerpt string link to the post.
+ *
+ * @param string $more "Read more" excerpt string.
+ * @return string (Maybe) modified "read more" excerpt string.
+ */
+function wpdocs_excerpt_more( $more ) {
+    return sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+        get_permalink( get_the_ID() ),
+        __( '...', 'textdomain' )
+    );
+}
+add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
