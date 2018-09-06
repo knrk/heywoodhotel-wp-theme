@@ -1,5 +1,4 @@
 <?php get_header(); ?>
-xxcd
 <!-- container -->
 <div class="container">	
 	<!-- site-content -->

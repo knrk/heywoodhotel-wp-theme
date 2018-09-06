@@ -20,6 +20,7 @@ body.home #menu .current-menu-item a,
 body.reservations #menu a[href*="reservations"],
 body.location #menu a[href*="location"],
 body.policies #menu a[href*="policies"],
+body.specials #menu a[href*="specials"],
 body.rooms #menu a[href*="room"] {
     background-color: #fadf17;
     color: #464646;
