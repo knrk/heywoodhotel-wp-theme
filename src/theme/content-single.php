@@ -19,10 +19,7 @@
 		</span>
 		<span>|</span>
 		<span class="author">
-			by 
-			<a href="<?php echo get_author_posts_url( get_the_author_meta( 'ID' ) ); ?>">
-				<?php the_author(); ?>, <?php echo get_user_meta($post->post_author, 'hotel_role', true); ?>
-			</a>
+			by <?php the_author(); ?>, <?php echo get_user_meta($post->post_author, 'hotel_role', true); ?>
 		</span>
 	</p>
 
