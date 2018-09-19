@@ -24,6 +24,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const uglify = require('gulp-uglify');
 const unzip = require('gulp-unzip');
 const zip = require('gulp-zip');
+const less = require('gulp-less');
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -164,9 +165,10 @@ gulp.task('copy-fonts-dev', () => {
 });
 
 gulp.task('style-dev', () => {
-	return gulp.src('src/style/style.css')
+	return gulp.src('src/style/style.less')
 		.pipe(plumber({ errorHandler: onError }))
 		.pipe(sourcemaps.init())
+		.pipe(less())
 		.pipe(postcss(pluginsDev))
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('build/wordpress/wp-content/themes/' + themeName))
@@ -226,6 +228,7 @@ gulp.task('reload-plugins', ['plugins-dev'], (done) => {
 
 gulp.task('watch', () => {
 	gulp.watch(['src/style/**/*.css'], ['style-dev']);
+	gulp.watch(['src/style/**/*.less'], ['style-dev']);
 	gulp.watch(['src/js/**'], ['reload-js']);
 	gulp.watch(['src/img**'], ['img-dev']);
 	gulp.watch(['src/fonts/**'], ['reload-fonts']);
