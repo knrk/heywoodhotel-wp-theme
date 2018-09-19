@@ -228,6 +228,7 @@
     body.reservations #menu a[href*="reservations"],
     body.location #menu a[href*="location"],
     body.policies #menu a[href*="policies"],
+    body.specials #menu a[href*="specials"],
     body.rooms #menu a[href*="room"],
     body.blog #menu a[href*="blog"],
     body.single-post #menu a[href*="blog"]  {

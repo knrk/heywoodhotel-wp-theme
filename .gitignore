@@ -6,3 +6,4 @@ heywood.sql
 *.log
 /src/plugins
 package-lock.json
+/dist
