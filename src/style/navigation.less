@@ -1,3 +1,26 @@
+// navigation entries list
+@nav-items: index,home,press,reservations,rooms,location,specials,group-rentals,policies,blog,group;
+
+// mobile-first navigation selected states
+each(@nav-items, {
+    body.@{value} #menu a[href*="@{value}"] {
+        background-color: @nav-bgcolor-selected;
+        color: @nav-color-selected; 
+    }
+});
+
+// desktop (wider than tablet navigation)
+@media (min-width: 845px) {
+    each(@nav-items, {
+        body.@{value} #menu a[href*="@{value}"] {
+            border-bottom: 3px solid @nav-bgcolor-selected;
+            background-color: transparent;
+            color: @nav-color-selected;
+        }
+    });
+}
+
+/////////
 header ul {
     list-style-type: none;
     position: static;
@@ -11,19 +34,6 @@ header ul {
 header li {
     margin-bottom: 1px;
     margin-right: 0;
-}
-body.press #menu a[href*="press"],
-body.group #menu a[href*="group"],
-body.group-rentals #menu a[href*="group-rentals"],
-body.index #menu a[href*="index"],
-body.home #menu .current-menu-item a,
-body.reservations #menu a[href*="reservations"],
-body.location #menu a[href*="location"],
-body.policies #menu a[href*="policies"],
-body.specials #menu a[href*="specials"],
-body.rooms #menu a[href*="room"] {
-    background-color: #fadf17;
-    color: #464646;
 }
 
 header ul li a {
