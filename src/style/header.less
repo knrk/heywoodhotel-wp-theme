@@ -1,0 +1,112 @@
+
+header {
+  width: 100%;
+  min-width: 100px;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  border-bottom: none;
+}
+
+header .header-logo {
+  width: 100px;
+  height: 54px;
+  /* display: inline-block; */
+  background: url('img/320/logo.svg') center center no-repeat;
+  float: left;
+  margin: 1px 0 0 5px;
+}
+
+header .show-menu {
+  text-decoration: none;
+  border-bottom: 3px solid #666666;
+  text-align: right;
+  line-height: 54px;
+  height: 54px;
+  display: none;
+  text-transform: uppercase;
+  padding-right: 5px;
+  display: block;
+}
+
+header .show-menu .menu-icon {
+  background: url('img/320/menu-icon.png') center center no-repeat;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  position: relative;
+  top: -3px;
+}
+
+header input[type=checkbox] {
+  display: none;
+}
+
+header input[type=checkbox]:checked ~ #menu {
+  display: block;
+}
+
+  // navigation entries list
+@nav-items: index,home,press,reservations,rooms,location,specials,group-rentals,policies,blog,group;
+
+// mobile-first navigation selected states
+each(@nav-items, {
+    body.@{value} #menu a[href*="@{value}"] {
+        background-color: @nav-bgcolor-selected;
+        color: @nav-color-selected; 
+    }
+});
+
+// desktop (wider than tablet navigation)
+@media (min-width: 845px) {
+    each(@nav-items, {
+        body.@{value} #menu a[href*="@{value}"] {
+            border-bottom: 3px solid @nav-bgcolor-selected;
+            background-color: transparent;
+            color: @nav-color-selected;
+        }
+    });
+}
+
+header ul {
+    list-style-type: none;
+    position: static;
+    display: none;
+    right: auto;
+    margin-top: 1px;
+    margin: 0;
+    padding: 0;
+    right: 0;
+}
+header li {
+    margin-bottom: 1px;
+    margin-right: 0;
+}
+
+header ul li a {
+    width: 100%;
+}
+header li a {
+    border-width: 0 1px 1px 1px;
+    border-color: #ffffff;
+    display: block;
+    height: 40px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    background: #666666;
+}
+header li a,
+header li a:hover,
+header li a:visited,
+header li a:active,
+header li a:link {
+    color: #ffffff;
+    text-decoration: none;
+}
+header li a:hover {
+    background: #fadf17;
+    color: #464646;
+}

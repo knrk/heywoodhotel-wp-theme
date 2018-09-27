@@ -4,7 +4,6 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
 	<?php wp_head(); ?>
-	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8bca4bb0-90b5-40cd-9646-32cd405f6aa4.css"/>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
 	<!-- Google Analytics -->
 	<script>
