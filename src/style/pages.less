@@ -1,117 +1,25 @@
 
-body.index #nyt,
 body.home #nyt {
   margin-top: 30px;
   padding-top: 31px;
   padding-bottom: 31px;
 }
 
-body.index .nytlogo,
 body.home .nytlogo {
   width: 60px;
   /* display: inline-block; */
   float: left;
 }
 
-body.index .nytcallout,
 body.home .nytcallout {
   display: block;
   position: relative;
   margin-left: 80px;
 }
 
-body.index .nytcallout.footer,
 body.home .nytcallout.footer {
   font-size: 16px;
   font-family: @serif-font;
-}
-
-body.index #googlemap,
-body.home #googlemap {
-  width: 100%;
-  min-height: 150px;
-  background-image: url('img/googlemap_big.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: block;
-}
-
-body.index #googlemap a:hover,
-body.home #googlemap a:hover {
-  text-decoration: none;
-}
-
-body.index #googlemap h3 {
-  font-family: @serif-font;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-  position: relative;
-  top: 25px;
-  left: 25px;
-  color: #464646;
-  text-shadow: 1px 1px 2px #969696;
-}
-
-body.index #exhibiting {
-  margin-top: 10px;
-}
-
-body.index #exhibiting img {
-  width: 100%;
-}
-
-body.index #heycation {
-  display: none;
-  border-top: 1px solid #758A80;
-  border-bottom: 1px solid #758A80;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-
-body.index #heycation #heycation_img {
-  width: 90%;
-}
-
-body.index #heycation .promo-cta {
-  margin-top: 20px;
-}
-
-body.index #heycation h3 {
-  color: #2b4660;
-  font-weight: 900;
-  font-family: @sans-serif-font;
-  margin-top: 10px;
-}
-
-body.index #heycation p {
-  margin-top: 0;
-}
-
-body.index #heycation .promo-codes {
-  font-size: 15px;
-  white-space: nowrap;
-}
-
-body.index #heycation .promo-button,
-body.index #heycation .promo-button:hover,
-body.index #heycation .promo-button:focus,
-body.index #heycation .promo-button:visited {
-  line-height: 30px;
-  background-color: #2b4660;
-  color: #ffffff;
-  display: inline-block;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-  white-space: nowrap;
-}
-
-body.index #heycation .terms {
-  font-size: 11px;
 }
 
 body.reservations iframe {
@@ -119,45 +27,42 @@ body.reservations iframe {
   height: 800px;
 }
 
-body.rooms label {
-  font-weight: 600;
+body.rooms {
+  label {
+    font-weight: 600;
+  }
+
+  .bxslider picture img {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list-unstyled .menu-item {
+    counter-increment: step-counter;
+  }
+
+  .list-unstyled .menu-item a[href]:before {
+    content: counter(step-counter);
+    display: inline-block;
+    padding: 6px 8px;
+    border: 1px solid #464646;
+    font-size: 24px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+
+  .list-unstyled li a {
+    display: flex;
+    align-items: center;
+    padding: 7px 5px 7px 10px;
+  }  
+
+  .sidenav .current-menu-item a[href] {
+    background-color: #efe17b;
+  }
+  
 }
 
-body.rooms .bxslider picture img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.rooms .list-unstyled .menu-item {
-  counter-increment: step-counter;
-}
-
-body.rooms .list-unstyled .menu-item a[href]:before {
-  content: counter(step-counter);
-  display: inline-block;
-  padding: 6px 8px;
-  border: 1px solid #464646;
-  font-size: 24px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-body.rooms .list-unstyled li a {
-  display: flex;
-  align-items: center;
-  padding: 7px 5px 7px 10px;
-}
-
-body.rooms.room1 .sidenav a[href*="room1"],
-body.rooms.room2 .sidenav a[href*="room2"],
-body.rooms.room3 .sidenav a[href*="room3"],
-body.rooms.room4 .sidenav a[href*="room4"],
-body.rooms.room5 .sidenav a[href*="room5"],
-body.rooms.room6 .sidenav a[href*="room6"],
-body.rooms.room7 .sidenav a[href*="room7"],
-body.rooms .current-menu-item a[href] {
-  background-color: #efe17b;
-}
 
 body.location .mapimage {
   background-image: url('img/widescreen/googlemap.jpg');
@@ -246,27 +151,24 @@ body.group .contentblock .badges a img {
 
 /* For devices larger than 550px */
 @media (min-width: 550px) {
-  body.index #exhibiting, 
-  body.home #exhibiting {
-    margin-top: 0;
-  }
+  body.rooms {
+    .dropdownnav {
+      display: none;
+    }
 
-  body.rooms .dropdownnav {
-    display: none;
-  }
+    .sidenav ul.list-unstyled {
+      display: block;
+    }
 
-  body.rooms .sidenav ul.list-unstyled {
-    display: block;
-  }
+    .thumbnail {
+      vertical-align: middle;
+      display: inline;
+      max-width: 45%;
+    }
 
-  body.rooms .thumbnail {
-    vertical-align: middle;
-    display: inline;
-    max-width: 45%;
-  }
-
-  body.rooms .swipebox {
-    display: inline;
+    .swipebox {
+      display: inline;
+    }
   }
 }
 
@@ -274,18 +176,14 @@ body.group .contentblock .badges a img {
 /* Larger than mobile */
 @media (max-width: 549px) {}
 
-@media (min-width: 550px) and (max-width: 800px) {
-  body.index #heycation .columns {
-    display: block !important;
-    width: 100% !important;
-    margin: 0 !important;
-  }
-}
+@media (min-width: 550px) and (max-width: 800px) {}
 
 /* Larger than tablet */
 @media (min-width: 845px) {
-  body.rooms .sidenav {
-    display: block;
+  body.rooms {
+    .sidenav {
+      display: block;
+    }
   }
   
   body.location .splitcolumns {
