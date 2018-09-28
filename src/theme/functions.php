@@ -4,12 +4,14 @@ function heywood_resources() {
 	// wp_enqueue_script( 'header_js', get_template_directory_uri() . '/js/header-bundle.js', null, 1.0, false );
 	// wp_enqueue_script( 'footer_js', get_template_directory_uri() . '/js/footer-bundle.js', null, 1.0, true );
 }
+
 add_action( 'wp_enqueue_scripts', 'heywood_resources' );
 
 // Customize excerpt word count length
 function custom_excerpt_length() {
 	return 40;
 }
+
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 // Theme setup
@@ -23,6 +25,7 @@ function heywood_setup() {
 	add_image_size( 'square-thumbnail', 80, 80, true );
 	add_image_size( 'banner-image', 1024, 1024, true );
 }
+
 add_action( 'after_setup_theme', 'heywood_setup' );
 
 show_admin_bar( false );
@@ -45,6 +48,7 @@ function heywood_widgets() {
 		)
 	);
 }
+
 add_action( 'widgets_init', 'heywood_widgets' );
 
 function heywood_custom_menu() {
@@ -53,15 +57,18 @@ function heywood_custom_menu() {
 		'navigation-rooms' => __('Rooms')
 	));
 }
+
 add_action('init', 'heywood_custom_menu');
 
 function print_menu_shortcode($atts, $content = null) {
     extract(shortcode_atts(array( 'name' => null, ), $atts));
     return wp_nav_menu( array( 'menu' => $name, 'echo' => false, 'menu_class' => 'list-unstyled' ) );
 }
+
 add_shortcode('menu', 'print_menu_shortcode');
 
 add_filter('body_class','body_class_section');
+
 function body_class_section($classes) {
 	global $wpdb, $post;
 	if (is_page()) {
@@ -77,6 +84,7 @@ function body_class_section($classes) {
 }
 
 add_action( 'show_user_profile', 'my_show_extra_profile_fields' );
+
 add_action( 'edit_user_profile', 'my_show_extra_profile_fields' );
 
 function my_show_extra_profile_fields( $user ) { ?>
@@ -98,6 +106,7 @@ function my_show_extra_profile_fields( $user ) { ?>
 <?php }
 
 add_action( 'personal_options_update', 'my_save_extra_profile_fields' );
+
 add_action( 'edit_user_profile_update', 'my_save_extra_profile_fields' );
 
 function my_save_extra_profile_fields( $user_id ) {

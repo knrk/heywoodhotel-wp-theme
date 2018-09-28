@@ -4,10 +4,9 @@
 */
 ?>
 <?php get_header(); ?>
-
+<main role="main">
 	<div class="site-content">
-        <div class="contents">            
-            <main>
+        <div class="contents">
             <?php 
             $temp = $wp_query; $wp_query= null;
             $wp_query = new WP_Query(); $wp_query->query('posts_per_page=5' . '&paged='.$paged);
@@ -57,7 +56,7 @@
             <?php } */ ?>
 
             <?php wp_reset_postdata(); ?>
-            </main>
 	    </div>
     </div>
+</main>
 <?php get_footer(); ?>

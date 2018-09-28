@@ -1,4 +1,3 @@
-
 header {
   width: 100%;
   min-width: 100px;
@@ -6,107 +5,220 @@ header {
   margin-right: 0;
   position: relative;
   border-bottom: none;
-}
 
-header .header-logo {
-  width: 100px;
-  height: 54px;
-  /* display: inline-block; */
-  background: url('img/320/logo.svg') center center no-repeat;
-  float: left;
-  margin: 1px 0 0 5px;
-}
+  .header-logo {
+    width: 100px;
+    height: 54px;
+    background: url('img/320/logo.svg') center center no-repeat;
+    float: left;
+    margin: 1px 0 0 5px;
+  } 
 
-header .show-menu {
-  text-decoration: none;
-  border-bottom: 3px solid #666666;
-  text-align: right;
-  line-height: 54px;
-  height: 54px;
-  display: none;
-  text-transform: uppercase;
-  padding-right: 5px;
-  display: block;
-}
+  .show-menu {
+    text-decoration: none;
+    border-bottom: 3px solid #666666;
+    text-align: right;
+    line-height: 54px;
+    height: 54px;
+    display: none;
+    text-transform: uppercase;
+    padding-right: 5px;
+    display: block;
 
-header .show-menu .menu-icon {
-  background: url('img/320/menu-icon.png') center center no-repeat;
-  width: 30px;
-  height: 30px;
-  vertical-align: middle;
-  position: relative;
-  top: -3px;
-}
-
-header input[type=checkbox] {
-  display: none;
-}
-
-header input[type=checkbox]:checked ~ #menu {
-  display: block;
-}
-
-  // navigation entries list
-@nav-items: index,home,press,reservations,rooms,location,specials,group-rentals,policies,blog,group;
-
-// mobile-first navigation selected states
-each(@nav-items, {
-    body.@{value} #menu a[href*="@{value}"] {
-        background-color: @nav-bgcolor-selected;
-        color: @nav-color-selected; 
+    .menu-icon {
+      background: url('img/320/menu-icon.png') center center no-repeat;
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      position: relative;
+      top: -3px;
     }
-});
+  }
+
+  input[type=checkbox] {
+    display: none;
+  }
+
+  input[type=checkbox]:checked ~ #menu {
+    display: block;
+  }
+
+  ul {
+      list-style-type: none;
+      position: static;
+      display: none;
+      right: auto;
+      margin-top: 1px;
+      margin: 0;
+      padding: 0;
+      right: 0;
+  }
+
+  li {
+      margin-bottom: 1px;
+      margin-right: 0;
+  }
+
+  ul li a {
+      width: 100%;
+  }
+
+  li a {
+      border-width: 0 1px 1px 1px;
+      border-color: #ffffff;
+      display: block;
+      height: 40px;
+      color: #ffffff;
+      text-decoration: none;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 40px;
+      background: #666666;
+  }
+
+  li a,
+  li a:hover,
+  li a:visited,
+  li a:active,
+  li a:link {
+      color: #ffffff;
+      text-decoration: none;
+  }
+
+  li a:hover {
+      background: #fadf17;
+      color: #464646;
+  }
+}
+
+body.rooms #menu a[href*="room"],
+#menu .current-menu-item a {
+    background-color: @nav-bgcolor-selected;
+    color: @nav-color-selected; 
+} 
+
 
 // desktop (wider than tablet navigation)
+@media (min-width: 845px) {}
+
+// responsive items
+// standard breakpoints (>=400px), (<= 549px), (>=550px), (>=550px <= 800px), (>= 845px), (>=900px)
+/* For devices larger than 400px */
+// @media (min-width: 400px) {}
+
+/* Larger than mobile */
+// @media (max-width: 549px) {}
+
+/* For devices larger than 550px */
+// @media (min-width: 550px) {}
+
+// @media (min-width: 550px) and (max-width: 800px) {}
+
+/* Larger than tablet */
 @media (min-width: 845px) {
-    each(@nav-items, {
-        body.@{value} #menu a[href*="@{value}"] {
-            border-bottom: 3px solid @nav-bgcolor-selected;
-            background-color: transparent;
-            color: @nav-color-selected;
-        }
-    });
+  header {
+    ul {
+        position: absolute;
+        margin-top: 59px;
+        z-index: 1000;
+        display: block;
+    }
+
+    li {
+        float: left;
+        width: auto;
+        margin-right: 20px;
+    }
+
+    li a {
+        border: 0;
+        display: inline-block;
+        line-height: 25px;
+        height: auto;
+        color: #464646;
+        text-align: inherit;
+        background-color: transparent;
+    }
+
+    li a,
+    li a:hover,
+    li a:visited,
+    li a:active,
+    li a:link {
+        color: #464646;
+        text-decoration: none;
+    }
+
+    li a:hover {
+        background: none;
+        border-bottom: 3px solid #fadf17;
+        color: #464646;
+    }
+
+    .header-logo {
+      width: 209px;
+      height: 111px;
+      display: inline-block;
+      background: url('img/heywood-logo.svg') center center no-repeat;
+      margin: 0;
+      position: relative;
+      z-index: 1000;
+    }
+
+    ul {
+      position: absolute;
+      margin-top: 59px;
+      z-index: 1000;
+      display: block;
+    }
+
+    li {
+      display: inline-block;
+      float: left;
+      width: auto;
+      margin-right: 20px;
+    }
+
+    li a {
+      border: 0;
+      display: inline-block;
+      line-height: 25px;
+      height: auto;
+      color: #464646;
+      text-align: inherit;
+      background-color: transparent;
+    }
+
+    li a,
+    li a:hover,
+    li a:visited,
+    li a:active,
+    li a:link {
+      color: #464646;
+      text-decoration: none;
+    }
+
+    li:hover a {
+      background: none;
+      border-bottom: 3px solid #fadf17;
+      color: #464646;
+    }
+
+    .show-menu {
+      display: none;
+    }
+  
+    #menu a {
+      border-bottom: 0;
+    }
+  }
+  
+  #menu .current-menu-item a,
+  body.rooms #menu a[href*="room"] {
+      border-bottom: 3px solid @nav-bgcolor-selected;
+      background-color: transparent;
+      color: @nav-color-selected;
+  } 
 }
 
-header ul {
-    list-style-type: none;
-    position: static;
-    display: none;
-    right: auto;
-    margin-top: 1px;
-    margin: 0;
-    padding: 0;
-    right: 0;
-}
-header li {
-    margin-bottom: 1px;
-    margin-right: 0;
-}
-
-header ul li a {
-    width: 100%;
-}
-header li a {
-    border-width: 0 1px 1px 1px;
-    border-color: #ffffff;
-    display: block;
-    height: 40px;
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: uppercase;
-    text-align: center;
-    line-height: 40px;
-    background: #666666;
-}
-header li a,
-header li a:hover,
-header li a:visited,
-header li a:active,
-header li a:link {
-    color: #ffffff;
-    text-decoration: none;
-}
-header li a:hover {
-    background: #fadf17;
-    color: #464646;
-}
+// @media (min-width: 900px) {}

@@ -16,6 +16,7 @@
   padding: 0 20px;
   box-sizing: border-box;
 }
+
 .column,
 .columns {
   width: 100%;
@@ -23,134 +24,162 @@
   box-sizing: border-box;
 }
 
-
 .contents {
   border: none;
   top: 0px;
   padding-bottom: 10px;
   padding-top: 1px;
 }
+
 .photos {
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 15px;
 }
+
 .bxslider {
   padding: 0;
   margin: 0;
   margin-top: 1px;
 }
-.bx-wrapper .bx-viewport {
-  border: none;
-  box-shadow: none;
-  left: 0;
-}
+
 .bx-wrapper {
   margin-bottom: 40px;
+
+  .bx-viewport {
+    border: none;
+    box-shadow: none;
+    left: 0;
+  }
 }
+
 .bannerimage {
   width: 100%;
 }
+
 .row {
   margin-bottom: 20px;
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
 }
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-.row:after {
-  clear: both;
-}
-.row:before,
-.row:after {
-  content: " ";
-  display: table;
-}
-.row:after {
-  clear: both;
-}
+
 .contentblock {
-  /* padding: 0 10px 10px 10px; */
 }
+
+// callout widget
 .callout {
   background-color: #666666;
   padding: 10px;
   color: #ffffff;
+
+  caption {
+    margin: 0;
+    font-family: @serif-font;
+    text-align: left;
+    font-size: 20px;
+  }
+
+  a {
+    color: #66cccc !important;
+  }
+
+  h2.punchline {
+    color: #66cccc;
+  }
+
+  ul {
+    margin-left: 0;
+    margin-right: 0;
+    padding: 0;
+    padding-left: 10px;
+    list-style: none;
+  }
+
+  ul li {
+    margin-bottom: 10px;
+  }
+
+  .indent {
+    margin-left: 10px;
+  }
 }
-.callout caption {
-  margin: 0;
-  font-family: @serif-font;
-  text-align: left;
-  font-size: 20px;
-}
-.callout a {
-  color: #66cccc !important;
-}
-.callout h2.punchline {
-  color: #66cccc;
-}
-.callout ul {
-  margin-left: 0;
-  margin-right: 0;
-  padding: 0;
-  padding-left: 10px;
-  list-style: none;
-}
-.callout ul li {
-  margin-bottom: 10px;
-}
-.callout .indent {
-  margin-left: 10px;
-}
+
+// sidenav widget
 .sidenav {
   background-color: #666666;
+
+  ul.list-unstyled {
+    display: none;
+    margin: 0;
+    padding: 0;
+    padding-left: 0;
+  }
+
+  ul.list-unstyled li {
+    position: relative;
+  }
+
+  ul.list-unstyled li a {
+    display: block;
+    margin: 5px;
+    background-color: #adb0a0;
+    padding: 15px 5px 15px 10px;
+    color: #464646;
+    font-size: 16px;
+    clear: both;
+  }
+
+  ul.list-unstyled li a,
+  ul.list-unstyled li a:hover,
+  ul.list-unstyled li a:visited,
+  ul.list-unstyled li a:active,
+  ul.list-unstyled li a:link {
+    text-decoration: none;
+  }
+
+  ul.list-unstyled li a:hover {
+    background-color: #efe17b;
+  }
+
+  ul.list-unstyled li a:hover .room-name {
+    color: #464646;
+  }
+
+  ul.list-unstyled li .room-number {
+    font-size: 24px;
+    display: block;
+    position: relative;
+    float: left;
+    border: 1px solid #464646;
+    border-radius: 50%;
+    padding: 6px 8px;
+    margin-top: -8px;
+  }
+
+  ul.list-unstyled li .room-name {
+    display: block;
+    margin-left: 40px;
+  }
 }
-.sidenav ul.list-unstyled {
-  display: none;
-  margin: 0;
-  padding: 0;
-  padding-left: 0;
-}
-.sidenav ul.list-unstyled li {
-  position: relative;
-}
-.sidenav ul.list-unstyled li a {
-  display: block;
-  margin: 5px;
-  background-color: #adb0a0;
-  padding: 15px 5px 15px 10px;
-  color: #464646;
-  font-size: 16px;
-  clear: both;
-}
-.sidenav ul.list-unstyled li a,
-.sidenav ul.list-unstyled li a:hover,
-.sidenav ul.list-unstyled li a:visited,
-.sidenav ul.list-unstyled li a:active,
-.sidenav ul.list-unstyled li a:link {
-  text-decoration: none;
-}
-.sidenav ul.list-unstyled li a:hover {
-  background-color: #efe17b;
-}
-.sidenav ul.list-unstyled li a:hover .room-name {
-  color: #464646;
-}
-.sidenav ul.list-unstyled li .room-number {
-  font-size: 24px;
-  display: block;
-  position: relative;
-  float: left;
-  border: 1px solid #464646;
-  border-radius: 50%;
-  padding: 6px 8px;
-  margin-top: -8px;
-}
-.sidenav ul.list-unstyled li .room-name {
-  display: block;
-  margin-left: 40px;
-}
+
 .navdropdown {
   display: block;
   width: 100%;
@@ -158,6 +187,7 @@
   font-weight: 600;
   border-width: 3px;
 }
+
 .copyright {
   margin-top: 5px;
   text-align: center;
@@ -165,343 +195,267 @@
   margin-bottom: 5px;
 }
 
-
-body.index #nyt,
-body.home #nyt {
-  margin-top: 30px;
-  padding-top: 31px;
-  padding-bottom: 31px;
-}
-body.index .nytlogo,
-body.home .nytlogo {
-  width: 60px;
-  /* display: inline-block; */
-  float: left;
-}
-body.index .nytcallout,
-body.home .nytcallout {
-  display: block;
-  position: relative;
-  margin-left: 80px;
-}
-body.index .nytcallout.footer,
-body.home .nytcallout.footer {
-  font-size: 16px;
-  font-family: 'ClassicRoundW00-Regular', 'Trade Gothic W01 Roman', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-}
-body.index #googlemap,
-body.home #googlemap {
-  width: 100%;
-  min-height: 150px;
-  background-image: url('img/googlemap_big.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: block;
-}
-body.index #googlemap a:hover,
-body.home #googlemap a:hover {
-  text-decoration: none;
-}
-body.index #googlemap h3 {
-  font-family: 'ClassicRoundW00-Regular', 'Trade Gothic W01 Roman', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-  font-size: 28px;
-  font-weight: bold;
-  margin: 0;
-  position: relative;
-  top: 25px;
-  left: 25px;
-  color: #464646;
-  text-shadow: 1px 1px 2px #969696;
-}
-body.index #exhibiting {
-  margin-top: 10px;
-}
-body.index #exhibiting img {
-  width: 100%;
-}
-body.index #heycation {
-  display: none;
-  border-top: 1px solid #758A80;
-  border-bottom: 1px solid #758A80;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 10px;
-}
-body.index #heycation #heycation_img {
-  width: 90%;
-}
-body.index #heycation .promo-cta {
-  margin-top: 20px;
-}
-body.index #heycation h3 {
-  color: #2b4660;
-  font-weight: 900;
-  font-family: 'Trade Gothic W01 Roman', 'Helvetica Nueue', Helvetica, Arial, sans-serif;
-  margin-top: 10px;
-}
-body.index #heycation p {
-  margin-top: 0;
-}
-body.index #heycation .promo-codes {
-  font-size: 15px;
-  white-space: nowrap;
-}
-body.index #heycation .promo-button,
-body.index #heycation .promo-button:hover,
-body.index #heycation .promo-button:focus,
-body.index #heycation .promo-button:visited {
-  line-height: 30px;
-  background-color: #2b4660;
-  color: #ffffff;
-  display: inline-block;
-  font-weight: bold;
-  padding-left: 10px;
-  padding-right: 10px;
-  font-size: 16px;
-  white-space: nowrap;
-}
-body.index #heycation .terms {
-  font-size: 11px;
-}
-
-body.reservations iframe {
-  width: 100%;
-  height: 800px;
-}
-body.rooms label {
-  font-weight: 600;
-}
-
-body.rooms .bxslider picture img {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-body.rooms .list-unstyled .menu-item {
-  counter-increment: step-counter;
-}
-
-body.rooms .list-unstyled .menu-item a[href]:before {
-  content: counter(step-counter);
-  display: inline-block;
-  padding: 6px 8px;
-  border: 1px solid #464646;
-  font-size: 24px;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
-body.rooms .list-unstyled li a {
-  display: flex;
-  align-items: center;
-  padding: 7px 5px 7px 10px;
-}
-
-body.rooms.room1 .sidenav a[href*="room1"],
-body.rooms.room2 .sidenav a[href*="room2"],
-body.rooms.room3 .sidenav a[href*="room3"],
-body.rooms.room4 .sidenav a[href*="room4"],
-body.rooms.room5 .sidenav a[href*="room5"],
-body.rooms.room6 .sidenav a[href*="room6"],
-body.rooms.room7 .sidenav a[href*="room7"],
-body.rooms .current-menu-item a[href] {
-  background-color: #efe17b;
-}
-
-body.location .mapimage {
-  background-image: url('img/widescreen/googlemap.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  width: 100%;
-  position: relative;
-  vertical-align: top;
-  background-size: contain;
-}
-body.location .attractions li {
-  margin-bottom: 7px;
-}
-
-body.press .contentblock h2,
-body.policies .contentblock h2,
-body.group-rentals .contentblock h2,
-body.specials .contentblock h2 {
-  color: #ffffff;
-  background-color: #666666;
-  padding: 6px 10px;
-  margin-left: -10px;
-  margin-right: -10px;
-  margin-bottom: 10px;
-}
-
-body.group-rentals .contentblock .badge img {
-  margin: 25px 0 20px 30px;
-}
-
-.contentblock .badge > img {
-  max-width: 40%;
-  margin-left: 10px;
-}
-
-body.press .contentblock li,
-body.policies .contentblock li {
-  margin-bottom: 15px;
-}
-body.group .contentblock li {
-  margin-bottom: 15px;
-}
-
-body.press .contentblock .badges ul,
-body.policies .contentblock .badges ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-body.group .contentblock .badges ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-body.press .contentblock .badges li,
-body.policies .contentblock .badges li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 10px;
-}
-body.group .contentblock .badges li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  margin-bottom: 10px;
-}
-
-body.press .contentblock .badges a img,
-body.policies .contentblock .badges a img {
-  max-width: 150px;
-}
-body.group .contentblock .badges a img {
-  max-width: 150px;
-}
-
+// pressbox widget
 .pressbox {
   margin-top: 30px;
-}
-.pressbox ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: center;
-}
-.pressbox ul li {
-  padding: 0;
-  margin: 0;
-  display: inline;
-}
-.pressbox .press-image {
-  background-repeat: no-repeat;
-  background-position: center center;
-  border: 0;
-  margin: 0 10px 20px 10px;
-  vertical-align: middle;
-}
-.pressbox .press-image.conde-nast-traveler {
-  max-width: 90px;
-  min-width: 50px;
-  /*width: 175px;
-            height: 119px;*/
-}
-.pressbox .press-image.best-of-austin {
-  max-width: 90px;
-  min-width: 50px;
-  /*width: 130px;
-            height: 130px;*/
-}
-.pressbox .press-image.gq {
-  max-width: 80px;
-  min-width: 40px;
-  /*width: 115px;
-            height: 56px;*/
-}
-.pressbox .press-image.new-york-times {
-  max-width: 150px;
-  min-width: 75px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /*width: 370px;
-            height: 53px;*/
-}
-.pressbox .press-image.texas-monthly {
-  max-width: 150px;
-  min-width: 75px;
-  /*width: 240px;
-            height: 45px;*/
-}
-.pressbox .press-image.the-guardian {
-  max-width: 150px;
-  min-width: 75px;
-  /*width: 240px;
-            height: 42px;*/
-}
-.pressbox .press-image.wallpaper {
-  max-width: 150px;
-  min-width: 75px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  /*width: 230px;
-            height: 53px;*/
-}
-.pressbox .press-image.apartment-therapy {
-  max-width: 150px;
-  min-width: 75px;
-  /*width: 240px;
-            height: 74px;*/
-}
-.pressbox .press-image.lonely-planet {
-  max-width: 150px;
-  min-width: 75px;
-  margin-bottom: 10px;
-  /*width: 200px;
-            height: 99px;*/
-}
-.pressbox .press-image.southern-living {
-  max-width: 150px;
-  min-width: 75px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  /*width: 240px;
-            height: 48px;*/
-}
-.pressbox .press-image.monocle {
-  max-width: 150px;
-  min-width: 75px;
-  /*width: 220px;
-            height: 33px;*/
-}
-.pressbox .press-image.new-yorker-magazine {
-  max-width: 150px;
-  min-width: 75px;
-  /*width: 200px;
-            height: 47px;*/
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+  }
+  ul li {
+    padding: 0;
+    margin: 0;
+    display: inline;
+  }
+  .press-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    border: 0;
+    margin: 0 10px 20px 10px;
+    vertical-align: middle;
+  }
+  .press-image.conde-nast-traveler {
+    max-width: 90px;
+    min-width: 50px;
+  }
+  .press-image.best-of-austin {
+    max-width: 90px;
+    min-width: 50px;
+  }
+  .press-image.gq {
+    max-width: 80px;
+    min-width: 40px;
+  }
+  .press-image.new-york-times {
+    max-width: 150px;
+    min-width: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .press-image.texas-monthly {
+    max-width: 150px;
+    min-width: 75px;
+  }
+  .press-image.the-guardian {
+    max-width: 150px;
+    min-width: 75px;
+  }
+  .press-image.wallpaper {
+    max-width: 150px;
+    min-width: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+  }
+  .press-image.apartment-therapy {
+    max-width: 150px;
+    min-width: 75px;
+  }
+  .press-image.lonely-planet {
+    max-width: 150px;
+    min-width: 75px;
+    margin-bottom: 10px;
+  }
+  .press-image.southern-living {
+    max-width: 150px;
+    min-width: 75px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .press-image.monocle {
+    max-width: 150px;
+    min-width: 75px;
+  }
+  .press-image.new-yorker-magazine {
+    max-width: 150px;
+    min-width: 75px;
+  }
 }
 
-
+// article widget
 article.page > img {
   margin: 0 auto;
   display: block;
 }
 
 
-.slideshow-container h2 {
-  margin-bottom: 15px;
+.slideshow-container {
+  h2 {
+    margin-bottom: 15px;
+  }
+  .n2-ss-slider .n2-ow-all i,
+  i {
+    font-size: 13px;
+  }
+} 
+
+// standard breakpoints (>=400px), (<= 549px), (>=550px), (>=550px <= 800px), (>= 845px), (>=900px)
+/* For devices larger than 400px */
+@media (min-width: 400px) {
+  .layoutgrid {
+    width: 100%;
+  }
 }
 
-.slideshow-container .n2-ss-slider .n2-ow-all i,
-.slideshow-container i {
-  font-size: 13px;
+/* For devices larger than 550px */
+@media (min-width: 550px) {
+  .layoutgrid {
+    width: 98%;
+  }
+
+  .column,
+  .columns {
+    margin-left: 4%;
+  }
+
+  .column:first-child,
+  .columns:first-child {
+    margin-left: 0;
+  }
+
+  .one.column,
+  .one.columns {
+    width: 4.66666666667%;
+  }
+
+  .two.columns {
+    width: 13.3333333333%;
+  }
+
+  .three.columns {
+    width: 22%;
+  }
+
+  .four.columns {
+    width: 30.6666666667%;
+  }
+
+  .five.columns {
+    width: 39.3333333333%;
+  }
+
+  .six.columns {
+    width: 48%;
+  }
+
+  .seven.columns {
+    width: 56.6666666667%;
+  }
+
+  .eight.columns {
+    width: 65.3333333333%;
+  }
+
+  .nine.columns {
+    width: 74.0%;
+  }
+
+  .ten.columns {
+    width: 82.6666666667%;
+  }
+
+  .eleven.columns {
+    width: 91.3333333333%;
+  }
+
+  .twelve.columns {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .one-third.column {
+    width: 30.6666666667%;
+  }
+
+  .two-thirds.column {
+    width: 65.3333333333%;
+  }
+
+  .one-half.column {
+    width: 48%;
+  }
+  
+  .pressbox {
+    margin-top: 0px;
+
+    .press-image {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .press-image.new-york-times {
+      max-width: 150px;
+      min-width: 75px;
+    }
+  }
+}
+
+
+/* Larger than mobile */
+@media (max-width: 549px) {
+  .single-post {
+    h1 {
+      padding: 10px 25px 5px 25px;
+    }
+    .post-info {
+      padding: 5px 25px;
+    }
+    .post-inner-content,
+    .post-comments {
+      padding: 10px 50px;
+    }    
+  }
+
+  .pressbox .press-image.new-york-times {
+    max-width: 250px;
+    min-width: 75px;
+  }
+}
+
+
+@media (min-width: 550px) and (max-width: 800px) {}
+
+
+/* Larger than tablet */
+@media (min-width: 845px) {
+  .container {
+    padding-top: 15px;
+  }
+
+  .pressbox .press-image.new-york-times {
+    max-width: 250px;
+    min-width: 75px;
+  }
+   
+  .contents {
+    border-top: 3px solid #4c4748;
+    border-right: 3px solid #4c4748;
+    border-bottom: 3px solid #4c4748;
+    border-left: 3px solid #4c4748;
+    position: relative;
+    top: -27px;
+    padding: 25px 5px 20px 5px;
+    background-color: #ffffff;
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+  article.page > img {
+      width: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .pressbox .press-image {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
 }

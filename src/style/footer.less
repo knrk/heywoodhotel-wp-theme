@@ -8,43 +8,95 @@ footer {
   font-size: 11px;
   background-color: #4c4748;
   color: #ffffff;
+
+  section,
+  section:first-child,
+  section:last-child,
+  section:nth-child(even) {
+    display: block;
+    text-align: center;
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+  }
+
+  a,
+  a:hover,
+  a:visited,
+  a:active,
+  a:link {
+    color: #ffffff;
+  }
+
+  #facebooklink,
+  #twitterlink,
+  #instagramlink {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    vertical-align: middle;
+    margin-left: 5px;
+    background-repeat: no-repeat;
+    position: relative;
+    top: -3px;
+  }
+
+  #facebooklink {
+    background-image: url('img/facebook.png');
+  }
+
+  #twitterlink {
+    background-image: url('img/twitter.png');
+  }
+  
+  #instagramlink {
+    background-image: url('img/instagram.png');
+  }  
 }
-footer section,
-footer section:first-child,
-footer section:last-child,
-footer section:nth-child(even) {
-  display: block;
-  text-align: center;
-  width: auto;
-  margin-left: 0;
-  margin-right: 0;
-  margin-bottom: 0;
+
+// standard breakpoints (>=400px), (<= 549px), (>=550px), (>=550px <= 800px), (>= 845px), (>=900px)
+
+/* For devices larger than 400px */
+// @media (min-width: 400px) {}
+
+/* For devices larger than 550px */
+// @media (min-width: 550px) {}
+
+/* Larger than mobile */
+// @media (max-width: 549px) {}
+
+// @media (min-width: 550px) and (max-width: 800px) {}
+
+/* Larger than tablet */
+@media (min-width: 845px) {
+  footer {
+    margin-top: -27px;
+    height: 30px;
+    position: relative;
+    display: table;
+    width: 100%;
+
+    section {
+      display: table-cell !important;
+      padding-left: 5px;
+      padding-right: 5px;
+      width: 33.33%;
+    }
+
+    section:first-child {
+      padding-left: 15px;
+    }
+
+    section:nth-child(even) {
+      text-align: center;
+    }
+
+    section:last-child {
+      text-align: right;
+      padding-right: 15px;
+    }
+  }
 }
-footer a,
-footer a:hover,
-footer a:visited,
-footer a:active,
-footer a:link {
-  color: #ffffff;
-}
-footer #facebooklink,
-footer #twitterlink,
-footer #instagramlink {
-  display: inline-block;
-  width: 23px;
-  height: 23px;
-  vertical-align: middle;
-  margin-left: 5px;
-  background-repeat: no-repeat;
-  position: relative;
-  top: -3px;
-}
-footer #facebooklink {
-  background-image: url('img/facebook.png');
-}
-footer #twitterlink {
-  background-image: url('img/twitter.png');
-}
-footer #instagramlink {
-  background-image: url('img/instagram.png');
-}
+
+// @media (min-width: 900px) {}
