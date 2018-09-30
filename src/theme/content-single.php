@@ -6,7 +6,7 @@
 <article class="post-single">
 	<?php if ( has_post_thumbnail() ) : ?>
 		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post-thumbnail">
-			<?php the_post_thumbnail('full'); ?>
+			<?php the_post_thumbnail(); ?>
 		</a>
 		<?php echo do_shortcode('[shariff services="facebook|twitter|instagram|mailto"]'); ?>
 	<?php endif; ?>
@@ -19,7 +19,17 @@
 		</span>
 		<span>|</span>
 		<span class="author">
-			by <?php the_author(); ?>, <?php echo get_user_meta($post->post_author, 'hotel_role', true); ?>
+			<?php 
+				if (get_user_meta($post->post_author, 'hotel_role', true) != ""){
+					echo "by ";
+					the_author();
+					echo ", ";
+					get_user_meta($post->post_author, 'hotel_role', true); 
+				} else {
+					echo "by ";
+					the_author();
+				}
+			?>
 		</span>
 	</p>
 

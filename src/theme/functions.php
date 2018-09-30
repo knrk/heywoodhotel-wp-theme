@@ -132,3 +132,10 @@ function wpdocs_excerpt_more( $more ) {
     );
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
+
+/* Remove hardcoded widths/heights from images */ 
+function remove_thumbnail_width_height( $html, $post_id, $post_thumbnail_id, $size, $attr ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_width_height', 10, 5 );

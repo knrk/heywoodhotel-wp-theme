@@ -92,7 +92,8 @@ header {
 }
 
 body.rooms #menu a[href*="room"],
-#menu .current-menu-item a {
+#menu .current-menu-item a,
+#menu .current_page_parent a, {
     background-color: @nav-bgcolor-selected;
     color: @nav-color-selected; 
 } 
@@ -214,6 +215,7 @@ body.rooms #menu a[href*="room"],
   }
   
   #menu .current-menu-item a,
+  #menu .current_page_parent a,
   body.rooms #menu a[href*="room"] {
       border-bottom: 3px solid @nav-bgcolor-selected;
       background-color: transparent;
