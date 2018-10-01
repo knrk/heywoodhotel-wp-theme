@@ -1,3 +1,4 @@
+<!-- blog index content -->
 <article class="grid-item post-block <?php if ( has_post_thumbnail() ) {
 ?>has-thumbnail <?php } ?>" data-aos="fade-up">
 	<!-- post-thumbnail -->

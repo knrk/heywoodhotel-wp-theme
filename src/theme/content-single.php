@@ -5,10 +5,14 @@
 ?>
 <article class="post-single">
 	<?php if ( has_post_thumbnail() ) : ?>
-		<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>" class="post-thumbnail">
-			<?php the_post_thumbnail(); ?>
-		</a>
-		<?php echo do_shortcode('[shariff services="facebook|twitter|instagram|mailto"]'); ?>
+		<div class="post-thumbnail">		
+			<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
+				<?php the_post_thumbnail(); ?>
+			</a>
+			<div>
+				<?php echo do_shortcode('[shariff services="facebook|twitter|instagram|mailto"]'); ?>
+			</div>
+		</div>
 	<?php endif; ?>
 
 	<h1 class="single-title"><?php the_title(); ?></h1>
