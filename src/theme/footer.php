@@ -17,9 +17,9 @@
         </section>
     </footer>
     <div class="copyright">&copy; Heywood Hotel 2018 All rights reserved.</div>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/vendor/jquery.min.js"></script>  
-    <script src="<?php echo get_template_directory_uri(); ?>/js/heywood.js"></script>  
+ 
 </div>
 <?php wp_footer(); ?>
+<script src="<?php echo get_template_directory_uri(); ?>/js/heywood.js"></script> 
 </body>
 </html>

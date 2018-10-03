@@ -3,7 +3,6 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
-	<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/8bca4bb0-90b5-40cd-9646-32cd405f6aa4.css"/>
 	<?php wp_head(); ?>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/favicon.ico" type="image/x-icon">
 	<!-- Google Analytics -->
@@ -28,6 +27,15 @@
 
 		fbq('init', '205064539829223');
 		fbq('track', "PageView");
+	</script>
+	<script type="text/javascript">
+	var MTIProjectId='8bca4bb0-90b5-40cd-9646-32cd405f6aa4';
+	 (function() {
+	        var mtiTracking = document.createElement('script');
+	        mtiTracking.type='text/javascript';
+	        mtiTracking.async='true';
+	        (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild( mtiTracking );
+	   })();
 	</script>
 	<noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=205064539829223&ev=PageView&noscript=1"/></noscript>
 	<!-- End Facebook Pixel Code -->
