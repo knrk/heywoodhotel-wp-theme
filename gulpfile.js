@@ -276,8 +276,9 @@ gulp.task('process-images', ['copy-theme-prod'], () => {
 });
 
 gulp.task('style-prod', () => {
-	return gulp.src('src/style/style.css')
+	return gulp.src('src/style/style.less')
 		.pipe(plumber({ errorHandler: onError }))
+		.pipe(less())
 		.pipe(postcss(pluginsProd))
 		.pipe(gulp.dest('dist/themes/' + themeName))
 });
